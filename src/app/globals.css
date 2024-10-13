@@ -1,0 +1,181 @@
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  margin: unset;
+  background: -webkit-linear-gradient(left, #003366, #004080, #0059b3, #0073e6);
+  font-family: "Calibri", sans-serif;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found {
+  text-align: center;
+  color: #fff;
+  transform: translateY(46vh);
+}
+
+.box-1 {
+  width: 40px;
+  height: 40px;
+  border-left: 2px solid;
+  border-top: 2px solid;
+  position: absolute;
+}
+
+.box-2 {
+  width: 40px;
+  height: 40px;
+  border-right: 2px solid;
+  border-top: 2px solid;
+  position: absolute;
+  right: 0;
+}
+
+.box-3 {
+  width: 40px;
+  height: 40px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  position: absolute;
+  bottom: 0;
+}
+
+.box-4 {
+  width: 40px;
+  height: 40px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.welcome-page {
+  text-align: center;
+  color: #fff;
+}
+
+/* Global scrollbar styles for dark backgrounds */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--background-end-rgb)); /* Dark background color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #060606; /* Scrollbar thumb color */
+  border-radius: 10px;
+  border: 2px solid #0e0d0d; /* Matches the track color */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #060606; /* Scrollbar thumb color on hover */
+}
+
+::-webkit-scrollbar-corner {
+  background: rgb(
+    var(--background-end-rgb)
+  ); /* Dark corner color for both axes */
+}
+
+input {
+  padding: unset;
+  padding-left: 16px;
+  margin-bottom: 4px;
+  width: 100%;
+  height: 46px;
+  background-color: transparent;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 15px;
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #1a75ff;
+}
+
+input::placeholder {
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+input:focus::placeholder {
+  color: #1a75ff;
+}
+
+.error {
+  color: #ff0000;
+  margin-left: 4px;
+  transition: all 0.4s ease;
+}
+
+.button {
+  height: 46px;
+  width: 100%;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: -webkit-linear-gradient(
+    right,
+    #003366,
+    #004080,
+    #0059b3,
+    #0073e6
+  );
+}
+
+.button:hover {
+  background: -webkit-linear-gradient(
+    right,
+    #0055a9,
+    #0365c7,
+    #0266cb,
+    #047ff9
+  );
+}
+
+.logout-icon {
+  width: 34px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.logout-icon:hover {
+  width: 36px;
+  transition: all 0.2s ease;
+}
+
+.logout-icon:hover svg path {
+  fill: #a50404;
+}
