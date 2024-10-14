@@ -90,7 +90,7 @@ const AuthLoginForm: React.FC<Omit<IAuthProps, "toggle">> = ({
               name="email"
               type="email"
               className=""
-              placeholder="Email"
+              placeholder="E-mail"
             />
 
             <InputField

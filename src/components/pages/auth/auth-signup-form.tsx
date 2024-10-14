@@ -80,7 +80,7 @@ const AuthSignupForm: React.FC<Pick<IAuthProps, "intitial">> = ({
             />
             <InputField
               name="confirmPassword"
-              placeholder="Confirm password"
+              placeholder="Confirm Password"
               type="password"
             />
             <Button
