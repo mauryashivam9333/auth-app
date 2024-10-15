@@ -6,14 +6,7 @@ import { withAuthProtected } from "../auth";
 
 const WelcomePage: React.FC = () => {
   const router = useRouter();
-  const { removeData, getData } = storageLocal();
-
-  // useEffect(() => {
-  //   const user = getData("user");
-  //   if (!user?.email) {
-  //     router.push("/");
-  //   }
-  // }, [router, getData]);
+  const { removeData } = storageLocal();
 
   const handleLogout = () => {
     removeData("user");
