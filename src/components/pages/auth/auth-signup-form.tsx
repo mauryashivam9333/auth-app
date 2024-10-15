@@ -8,6 +8,7 @@ import { CONSTANTS } from "@/urils/constants";
 import { InputField } from "@/components/common/input";
 import { Button } from "@/components/common";
 import { hashPassword, storageLocal } from "@/urils/controller";
+import { withAuth } from "./with-auth";
 
 // Validation
 const validationSchema = Yup.object({
@@ -96,4 +97,4 @@ const AuthSignupForm: React.FC<Pick<IAuthProps, "intitial">> = ({
   );
 };
 
-export { AuthSignupForm };
+export default withAuth(AuthSignupForm);

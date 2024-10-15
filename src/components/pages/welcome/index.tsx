@@ -1,20 +1,19 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { PowerOffIcon } from "@/icons";
 import { storageLocal } from "@/urils/controller";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { withAuthProtected } from "../auth";
 
 const WelcomePage: React.FC = () => {
   const router = useRouter();
   const { removeData, getData } = storageLocal();
 
-  useEffect(() => {
-    const user = getData("user");
-    console.log("renders");
-    if (!user?.email) {
-      router.push("/");
-    }
-  }, [router, getData]);
+  // useEffect(() => {
+  //   const user = getData("user");
+  //   if (!user?.email) {
+  //     router.push("/");
+  //   }
+  // }, [router, getData]);
 
   const handleLogout = () => {
     removeData("user");
@@ -34,4 +33,4 @@ const WelcomePage: React.FC = () => {
   );
 };
 
-export { WelcomePage };
+export default withAuthProtected(WelcomePage);

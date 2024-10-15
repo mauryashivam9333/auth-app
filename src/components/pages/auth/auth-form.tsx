@@ -1,17 +1,13 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   AuthLoginForm,
   AuthSignupForm,
   AuthToggle,
 } from "@/components/pages/auth";
-import "./styles.css";
 import { IInitialTransitionValues } from "@/interfaces/auth";
-
-// const authForm = {
-//   login: <AuthLoginForm />,
-//   signup: <AuthSignupForm />,
-// };
+import "./styles.css";
 
 const AuthForm: React.FC = () => {
   const [toggle, setToggle] = useState<"login" | "signup">("signup");
@@ -27,15 +23,23 @@ const AuthForm: React.FC = () => {
     }
   };
   return (
-    <div className={"auth-form"}>
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 100 }}
+      exit={{ opacity: 0, x: 100 }}
+      transition={{
+        duration: 0.4,
+        delay: 0.6,
+      }}
+      className="auth-form"
+    >
       <AuthToggle toggle={toggle} handleToggle={handleToggle} />
       {toggle === "login" ? (
         <AuthLoginForm handleToggle={handleToggle} intitial={intitial} />
       ) : (
         <AuthSignupForm intitial={intitial} />
       )}
-      {/* {authForm[toggle]} */}
-    </div>
+    </motion.div>
   );
 };
 

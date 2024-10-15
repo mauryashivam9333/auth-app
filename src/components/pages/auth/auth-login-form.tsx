@@ -11,6 +11,7 @@ import {
 } from "@/interfaces/auth";
 import { Button, InputField } from "@/components/common";
 import { hashPassword, storageLocal } from "@/urils/controller";
+import { withAuthProtected } from "./with-protected-route";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -119,7 +120,7 @@ const AuthLoginForm: React.FC<Omit<IAuthProps, "toggle">> = ({
   );
 };
 
-export { AuthLoginForm };
+export default withAuthProtected(AuthLoginForm);
 
 const onLoginSuccess = (response: ILoginResponse) => {
   console.log({ response });
